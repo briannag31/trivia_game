@@ -1,0 +1,54 @@
+h1{
+ text-align: center;
+ 
+}
+
+body{
+    background-image: url("https://i.imgur.com/qbRJDCk.png?1");
+    background-color: black;
+}
+.background{
+    background-color: black;
+    width: 1000px;
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+}
+.question{
+    text-align: center;
+}
+.intro{
+    text-align: center;
+}
+button{
+    background-color: black;
+    border-color: rgba(235, 235, 29, 0.824);
+}
+.play{
+    height: 41px;
+    width: 145px;
+  
+}
+.twenty-six{
+    width: 104px;
+    
+}
+.cat{
+    height: 30px;
+
+}
+
+.team-data{
+  
+}
+
+input {
+    border-color: rgba(235, 235, 29, 0.824);
+    background-color: black;
+    height: 30px;
+    display: flex;
+    
+}
+::placeholder{
+    color: rgb(241, 24, 194);
+}
