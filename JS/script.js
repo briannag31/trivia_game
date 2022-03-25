@@ -21,13 +21,31 @@ const gkSelect = $gk.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
-       let rightAnswer = [];
-       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let rightAnswer= JSON.stringify(data.results[0].correct_answer)
        let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
-       let options = new Array()
-       options.push(rightAnswer, incorrectAnswers)
+       let result = data.results
+    
+    //    console.log(result)
+       
+       const choice = $.map(data.results[3], function(val, key) { return val; });
+
+       console.log(choice)
+    //    = [0].filter(opt => opt.key === "incorrect_answers")
+    //    [choice].val();
+    console.log(Object.values(data.results.incorrect_answers));
+    //    result.filter(function(opt) {
+    //     return opt.key === 'incorrect_answers';
+    //   })[0].val();
+    
+    // console.log(choice)
+    // let wrong = [];
+    // const propertyValues = wrong.values(data.results[0].incorrect_answers);
+    // wrong.push(incorrectAnswers)
+    // wrong.push(rightAnswer)
+
+// console.log(wrong);
         $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
-        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+        // $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
     })   
 })
 const musicSelect = $music.on("click", () => {
