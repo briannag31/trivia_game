@@ -2,7 +2,9 @@ h1{
  text-align: center;
  
 }
-
+h4{
+    color: rgb(241, 24, 194); 
+}
 body{
     background-image: url("https://i.imgur.com/qbRJDCk.png?1");
     background-color: black;
@@ -38,9 +40,7 @@ button{
 
 }
 
-.team-data{
-  
-}
+
 
 input {
     border-color: rgba(235, 235, 29, 0.824);
