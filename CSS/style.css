@@ -5,6 +5,9 @@ h1{
 h4{
     color: rgb(241, 24, 194); 
 }
+h5{
+    color: rgb(241, 24, 194);  
+}
 body{
     background-image: url("https://i.imgur.com/qbRJDCk.png?1");
     background-color: black;
@@ -17,6 +20,9 @@ body{
     justify-content: center; */
 }
 .question{
+    text-align: center;
+}
+.options{
     text-align: center;
 }
 .intro{

@@ -15,33 +15,86 @@ const $submitTwo = $(".two")
 //         $("aside").html(`<h4>${data.question}</h4>)
 
 const gkSelect = $gk.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=9&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy")
     .then((data) =>{
-        let $answer = JSON.stringify(data.results.question)
-        $(".question").html(`<h4>Question: ${$answer}</h4>`)
-        console.log(object)
-        // $(".answers").html(`<h4>${data.results.question}</h4>`)
-    })
-    console.log(gkSelect)
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    })   
+})
+const musicSelect = $music.on("click", () => {
+    $.ajax("https://opentdb.com/api.php?amount=1&category=12&difficulty=easy")
+    .then((data) =>{
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    }) 
 })
 
-const musicSelect = $music.on("click", () => {
-    $.ajax(`https://opentdb.com/api.php?amount=$12&difficulty=easy`);
-    console.log(musicSelect)
+const televisionSelect = $television.on("click", () => {
+    $.ajax("https://opentdb.com/api.php?amount=1&category=14&difficulty=easy")
+    .then((data) =>{
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    }) 
 })
 const historySelect = $history.on("click", () => {
-    $.ajax(`https://opentdb.com/api.php?amount=23&difficulty=easy`)
-})
-const televisionSelect = $television.on("click", () => {
-    $.ajax(`https://opentdb.com/api.php?amount=14&difficulty=easy`)
-})
-const scienceSelect = $science.on("click", () => {
-    $.ajax(`https://opentdb.com/api.php?amount=17&difficulty=easy`)
-})
-const celebritiesSelect = $celebrities.on("click", () => {
-    $.ajax(`https://opentdb.com/api.php?amount=26&difficulty=easy`)
+    $.ajax("https://opentdb.com/api.php?amount=1&category=23&difficulty=easy")
+    .then((data) =>{
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    })
 })
 
+const scienceSelect = $science.on("click", () => {
+    $.ajax("https://opentdb.com/api.php?amount=1&category=17&difficulty=easy")
+    .then((data) =>{
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    })
+})
+
+const celebritiesSelect = $celebrities.on("click", () => {
+    $.ajax("https://opentdb.com/api.php?amount=1&category=26&difficulty=easy")
+    .then((data) =>{
+       let question = JSON.stringify(data.results[0].question)
+       let rightAnswer = [];
+       rightAnswer= JSON.stringify(data.results[0].correct_answer)
+       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
+       let options = new Array()
+       options.push(rightAnswer, incorrectAnswers)
+        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
+        $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+    })
+})
 
 
 
@@ -68,7 +121,7 @@ const celebritiesSelect = $celebrities.on("click", () => {
 // Loop ends when one of the teams gets to 5
 // 	Pop up box saying which team wins!
 // 	Restart game button 
-
+//make how to play image as big as the screen
 
 
 
