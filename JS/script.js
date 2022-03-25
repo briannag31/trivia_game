@@ -5,14 +5,17 @@ const $television = $(".television")
 const $science = $(".science")
 const $celebrities = $(".celebrities")
 const $play = $(".play")
+const $playGame = $(".play-game")
 const $submitOne = $(".one")
 const $submitTwo = $(".two")
+const $alert = $(".alert")
 
 
-// const gkSelect = $gk.on("click", () => {
-//     $.ajax(`https://opentdb.com/api.php?amount=9&difficulty=easy`)
-//     .then((data) => {
-//         $("aside").html(`<h4>${data.question}</h4>)
+const $gamePlay = $play.on("click", () =>{
+    $playGame.css("visibility", "visible")
+    $play.css("visibility", "collapse")
+    $(".current-team").text("Team One goes first!")
+})
 
 const gkSelect = $gk.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy")
@@ -100,6 +103,7 @@ const celebritiesSelect = $celebrities.on("click", () => {
 
 // user sees home screen (title, how to play, and let's play button)
 //User clicks let's play and second half of screen shows up
+//message says team one goes first, team 2 div greyed out?
 //team one selects category
 //category click value data to API url
 //first API call gives us the first question
