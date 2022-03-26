@@ -104,6 +104,13 @@ margin-top: 10px;
     margin-top: 0px;
 }
 
+.reset{
+    color: rgb(241, 24, 194);
+    margin-top: 15px;
+    font-size: 20px;
+    height: 35px;
+}
+
 .next-question{
     font-size: 20px;
     color: rgb(241, 24, 194);

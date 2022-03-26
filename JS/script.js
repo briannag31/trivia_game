@@ -10,7 +10,7 @@ const $submitOne = $(".submit-one")
 const $submitTwo = $(".submit-two")
 const $textInput = $("[type='text']")
 const $intro = $(".intro")
-// const $nextQuestion = $(".next-question")
+const $reset = $(".reset")
 const $correct = $(".correct")
 const $triviaQuestion = $(".triviaQuestion")
 const $options = $(".options")
@@ -67,7 +67,9 @@ const celebritiesSelect = $celebrities.on("click", () => {
     .then($gamePlay)
      })
 
-
+const resetGame = $reset.on("click", () =>{
+    location.reload()
+})
 
 
 
@@ -97,7 +99,7 @@ const celebritiesSelect = $celebrities.on("click", () => {
 // If correct answer, give team two point (render); if incorrect, alert wrong answer
 // 	Pop up box noting it is team one's turn - how to do this?
 // Loop ends when one of the teams gets to 5
-// 	Pop up box saying which team wins!
+
 // 	Restart game button  <button type="reset" value="Reset">Reset</button>
 //make how to play image as big as the screen
 
