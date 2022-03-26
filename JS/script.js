@@ -32,8 +32,17 @@ const $gamePlay = function games(data){
             location.reload()
             })
     } else {
-        alert("Whomp")
+        $triviaQuestion.html("<img src='https://i.imgur.com/WfKDJO4.png?1'> <br> <button class='try-again'>Let's try again</button>")
+       $options.css("visibility", "hidden");
         $textInput.val("")
+        $(".team-data").css("visibility", "hidden");
+        const tryAgain = $(".try-again").on("click", () =>{
+            $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
+            $options.css("visibility", "visible");
+            $(".team-data").css("visibility", "visible");
+            })
+        // alert("Whomp")
+        // $textInput.val("")
     }
     })
 }
