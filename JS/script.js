@@ -18,11 +18,30 @@ const $gamePlay = function games(data){
     $('.category').attr('disabled','disabled');
     const $correctAnswer = data.results[0].correct_answer
     $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-    $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
+    let choices = [];
+    choices.push(data.results[0].incorrect_answers[0],data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2], data.results[0].correct_answer)
+    console.log(choices)
+    console.log($correctAnswer)
+
+    function randomizeAnswers(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1)); 
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      randomizeAnswers(choices);
+      console.log(choices)
+      console.log($correctAnswer)
+    //  console.log(randoms)
+
+    $(".options").html(`<label for="Selection">Choose one of the following:</label> <br> <select name="answers" class="select"> <option class="A" value="A">${data.results[0].incorrect_answers[0]}</option> <option class="B" value="B">${data.results[0].incorrect_answers[1]}</option> <option class="C" value="C">${data.results[0].incorrect_answers[2]}</option> <option class="D" value="D">${data.results[0].correct_answer}</option> </select>`)
+    
+    // <h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
+
     const submitEntry = $submitOne.on("click", () =>{
-        let answer = $(".team-one-answer").val()
-        console.log(answer)
-      if (answer === $correctAnswer){
+        // let answer = $(".select").val()
+        // console.log(answer)
+      if ($correctAnswer === $correctAnswer){
        $intro.css("visibility", "hidden");
        $triviaQuestion.html("<img src='https://i.imgur.com/gepq7Ws.png?1'> <br> <button class='next-question'>Next Question</button>")
        $options.css("visibility", "hidden");
@@ -41,8 +60,6 @@ const $gamePlay = function games(data){
             $options.css("visibility", "visible");
             $(".team-data").css("visibility", "visible");
             })
-        // alert("Whomp")
-        // $textInput.val("")
     }
     })
 }

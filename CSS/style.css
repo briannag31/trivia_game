@@ -11,10 +11,7 @@ h3{
 h4{
     color: rgb(241, 24, 194);  
 }
-.current-team{
-    color: rgb(241, 24, 194);  
-    font-size: 24px;
-}
+
 body{
     background-image: url("https://i.imgur.com/qbRJDCk.png?1");
     background-color: black;
@@ -49,22 +46,11 @@ button{
     background-color: black;
     border-color: rgba(235, 235, 29, 0.824);
 }
-.play{
-    height: 41px;
-    width: 145px;
-  
-}
 .twenty-six{
-    width: 140px;
-    
+    width: 140px;  
 }
 .cat{
     height: 30px;
-
-}
-
-.play-game{
-    /* visibility: hidden; */
 }
 
 input {
@@ -81,17 +67,7 @@ input[type="text"]{
     color: rgb(241, 24, 194);
 }
 
-.score{
-    font-size: 20px;
-    color: rgb(241, 24, 194);
-text-align: left;
-margin-top: 10px;
-}
-
-
 .team-data{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     margin-left: auto;
     margin-right: auto;
     font-size: 32px;
