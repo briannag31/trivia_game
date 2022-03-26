@@ -1,13 +1,15 @@
 h1{
  text-align: center;
- 
 }
+
 h2{
     color: rgb(241, 24, 194); 
 }
+
 h3{
     color: rgb(241, 24, 194);  
 }
+
 h4{
     color: rgb(241, 24, 194);  
 }
@@ -16,39 +18,45 @@ body{
     background-image: url("https://i.imgur.com/qbRJDCk.png?1");
     background-color: black;
 }
+
 .background{
     background-color: black;
     width: 1000px;
-    height: 600px;
+    height: 700px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    /* display: flex;
-    justify-content: center; */
 }
+
 .question{
     text-align: center;
 }
+
 .triviaQuestion{
     height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+
 .options{
     text-align: center;
     height: 30px;
     margin-bottom: 20px;
 }
+
 .intro{
     text-align: center;
     margin-bottom: 20px;
 }
+
 button{
     background-color: black;
     border-color: rgba(235, 235, 29, 0.824);
 }
+
 .twenty-six{
     width: 140px;  
 }
+
 .cat{
     height: 30px;
 }
@@ -56,8 +64,12 @@ button{
 input {
     border-color: rgba(235, 235, 29, 0.824);
     background-color: black;
-    height: 30px; 
+    height: 31px; 
+    padding-top: 2px;
+    padding-bottom: 4px;
+    margin-right: 10px;
 }
+
 input[type="text"]{
     font-size: 25px;
     color: rgb(241, 24, 194);
@@ -71,20 +83,28 @@ input[type="text"]{
     margin-left: auto;
     margin-right: auto;
     font-size: 32px;
+    visibility: hidden;
+    margin-top: 60px;
 }
 
-.submit-one{
-    width: 80px;
-    height: 40px;
+.submit{
+    color: transparent;
+    background-image: url("https://i.imgur.com/BqYzdNj.png?1");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 90px;
+    height: 41px;
+    font-size: 25px;
     margin-left: 0px;
-    margin-top: 0px;
 }
 
 .reset{
     color: rgb(241, 24, 194);
     margin-top: 15px;
     font-size: 20px;
-    height: 35px;
+    height: 37px;
+    visibility: hidden; 
 }
 
 .next-question{
@@ -94,6 +114,7 @@ input[type="text"]{
     margin-right: auto;
     margin-top: 15px;
 }
+
 .try-again{
     font-size: 20px;
     color: rgb(241, 24, 194);
