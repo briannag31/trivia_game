@@ -18,38 +18,18 @@ const $gamePlay = $play.on("click", () =>{
 })
 
 const gkSelect = $gk.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple")
     .then((data) =>{
-       let question = JSON.stringify(data.results[0].question)
-       let rightAnswer= JSON.stringify(data.results[0].correct_answer)
-       let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
-       let result = data.results
-    
-    //    console.log(result)
-       
-       const choice = $.map(data.results[3], function(val, key) { return val; });
+    //    let question = JSON.stringify(data.results[0].question)
+    //    let rightAnswer= JSON.stringify(data.results[0].correct_answer)
+    //    let incorrectAnswers = JSON.stringify(data.results[0].incorrect_answers)
 
-       console.log(choice)
-    //    = [0].filter(opt => opt.key === "incorrect_answers")
-    //    [choice].val();
-    console.log(Object.values(data.results.incorrect_answers));
-    //    result.filter(function(opt) {
-    //     return opt.key === 'incorrect_answers';
-    //   })[0].val();
-    
-    // console.log(choice)
-    // let wrong = [];
-    // const propertyValues = wrong.values(data.results[0].incorrect_answers);
-    // wrong.push(incorrectAnswers)
-    // wrong.push(rightAnswer)
-
-// console.log(wrong);
-        $(".triviaQuestion").html(`<h4>Question: ${question}</h4>`)
-        // $(".options").html(`<h5> Choose one of the following: ${options}</h5>`)
+        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
+        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
     })   
 })
 const musicSelect = $music.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=12&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=multiple")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
        let rightAnswer = [];
@@ -63,7 +43,7 @@ const musicSelect = $music.on("click", () => {
 })
 
 const televisionSelect = $television.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=14&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=multiple")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
        let rightAnswer = [];
@@ -76,7 +56,7 @@ const televisionSelect = $television.on("click", () => {
     }) 
 })
 const historySelect = $history.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=23&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
        let rightAnswer = [];
@@ -90,7 +70,7 @@ const historySelect = $history.on("click", () => {
 })
 
 const scienceSelect = $science.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=17&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=multiple")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
        let rightAnswer = [];
@@ -104,7 +84,7 @@ const scienceSelect = $science.on("click", () => {
 })
 
 const celebritiesSelect = $celebrities.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=26&difficulty=easy")
+    $.ajax("https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=multiple")
     .then((data) =>{
        let question = JSON.stringify(data.results[0].question)
        let rightAnswer = [];

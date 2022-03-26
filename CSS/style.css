@@ -2,10 +2,10 @@ h1{
  text-align: center;
  
 }
-h4{
+h2{
     color: rgb(241, 24, 194); 
 }
-h5{
+h3{
     color: rgb(241, 24, 194);  
 }
 .current-team{
@@ -20,6 +20,8 @@ body{
     background-color: black;
     width: 1000px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     /* display: flex;
     justify-content: center; */
 }
