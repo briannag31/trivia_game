@@ -6,71 +6,91 @@ const $science = $(".science")
 const $celebrities = $(".celebrities")
 const $play = $(".play")
 const $playGame = $(".play-game")
-const $submitOne = $(".one")
-const $submitTwo = $(".two")
-const $alert = $(".alert")
-
-
-const $gamePlay = $play.on("click", () =>{
-    $playGame.css("visibility", "visible")
-    $play.css("visibility", "collapse")
-    $(".current-team").text("Team One goes first!")
-})
+const $submitOne = $(".submit-one")
+const $submitTwo = $(".submit-two")
+const $textInput = $("[type='text']")
+const $intro = $(".intro")
+// const $nextQuestion = $(".next-question")
+const $correct = $(".correct")
+const $triviaQuestion = $(".triviaQuestion")
+const $options = $(".options")
+const $gamePlay = function games(data){
+    $('.category').attr('disabled','disabled');
+    const $correctAnswer = data.results[0].correct_answer
+    $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
+    $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
+    const submitEntry = $submitOne.on("click", () =>{
+        let answer = $(".team-one-answer").val()
+        console.log(answer)
+      if (answer === $correctAnswer){
+       $intro.css("visibility", "hidden");
+       $triviaQuestion.html("<img src='https://i.imgur.com/gepq7Ws.png?1'> <br> <button class='next-question'>Next Question</button>")
+       $options.css("visibility", "hidden");
+        $textInput.val("")
+        $(".team-data").css("visibility", "hidden");
+        const nextQ = $(".next-question").on("click", () =>{
+            location.reload()
+            })
+    } else {
+        alert("Whomp")
+        $textInput.val("")
+    }
+    })
+}
 
 const gkSelect = $gk.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
-    })   
-})
+    .then($gamePlay)
+     })
+
 const musicSelect = $music.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
-    }) 
-})
+    .then($gamePlay)
+    })
 
 const televisionSelect = $television.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
-    }) 
-})
+    .then($gamePlay)
+     })
+        
 const historySelect = $history.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
+    .then($gamePlay)
     })
-})
-
 const scienceSelect = $science.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
-    })
-})
+    .then($gamePlay)
+     })
 
 const celebritiesSelect = $celebrities.on("click", () => {
     $.ajax("https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=multiple")
-    .then((data) =>{
-        $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
-        $(".options").html(`<h3>Choose one of the following: ${data.results[0].incorrect_answers[0]},  ${data.results[0].incorrect_answers[1]},  ${data.results[0].incorrect_answers[2]},  ${data.results[0].correct_answer}</h3>`)
-    })
-})
+    .then($gamePlay)
+     })
 
 
 
-// user sees home screen (title, how to play, and let's play button)
-//User clicks let's play and second half of screen shows up
+
+
+
+// function teamPlay(event){
+//     if (submitOneEntry === )
+//     const sqaureNumber = parseInt(event.target.dataset.square);
+//     if(board[sqaureNumber]|| winner){ // if either are truthy, end the game
+//         return// ends the turn or game
+//     }
+
+//     board[sqaureNumber] = turn; // set the index in the board array so we know that the spot has been claimed
+//     winner = checkForWinner();//check for a winner (after every click)
+//     turn *= -1//change turn - whoever's turn it is, you can multiply be -1 to change it to the opposite bc neg x pos = neg, neg x neg = pos
+//     render()//render message to user
+
+
+// user sees home screen (title, how to play, and let's play button) -done
+//User clicks let's play and second half of screen shows up -done
 //message says team one goes first, team 2 div greyed out?
-//team one selects category
-//category click value data to API url
-//first API call gives us the first question
+//team one selects category - done
+//category click value data to API url -done
+//first API call gives us the first question -done
 // Loop:
 // Team one adds their answer and clicks submit
 // Get value of the text box and compare it to the correct answer

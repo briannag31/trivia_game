@@ -8,6 +8,9 @@ h2{
 h3{
     color: rgb(241, 24, 194);  
 }
+h4{
+    color: rgb(241, 24, 194);  
+}
 .current-team{
     color: rgb(241, 24, 194);  
     font-size: 24px;
@@ -19,6 +22,7 @@ body{
 .background{
     background-color: black;
     width: 1000px;
+    height: 600px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -39,6 +43,7 @@ body{
 }
 .intro{
     text-align: center;
+    margin-bottom: 20px;
 }
 button{
     background-color: black;
@@ -59,7 +64,7 @@ button{
 }
 
 .play-game{
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 input {
@@ -76,10 +81,13 @@ input[type="text"]{
     color: rgb(241, 24, 194);
 }
 
-.options2{
-    color: white;
+.score{
     font-size: 20px;
+    color: rgb(241, 24, 194);
+text-align: left;
+margin-top: 10px;
 }
+
 
 .team-data{
     display: grid;
@@ -89,8 +97,20 @@ input[type="text"]{
     font-size: 30px;
 }
 
-.submit{
+.answer{
     width: 80px;
     margin-left: 15px;
 }
 
+.next-question{
+    font-size: 20px;
+    color: rgb(241, 24, 194);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.correct{
+    /* display: none; */
+    
+}
