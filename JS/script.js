@@ -72,17 +72,7 @@ const celebritiesSelect = $celebrities.on("click", () => {
 
 
 
-// function teamPlay(event){
-//     if (submitOneEntry === )
-//     const sqaureNumber = parseInt(event.target.dataset.square);
-//     if(board[sqaureNumber]|| winner){ // if either are truthy, end the game
-//         return// ends the turn or game
-//     }
 
-//     board[sqaureNumber] = turn; // set the index in the board array so we know that the spot has been claimed
-//     winner = checkForWinner();//check for a winner (after every click)
-//     turn *= -1//change turn - whoever's turn it is, you can multiply be -1 to change it to the opposite bc neg x pos = neg, neg x neg = pos
-//     render()//render message to user
 
 
 // user sees home screen (title, how to play, and let's play button) -done
