@@ -35,7 +35,7 @@ const $gamePlay = function games(data){
       let answer = $textInput.val()
       if (answer === $correctAnswer){
        $intro.css("visibility", "hidden");
-       $triviaQuestion.html("<img src='https://i.imgur.com/gepq7Ws.png?1'> <br> <button class='next-question'>Next Question</button>")
+       $triviaQuestion.html("<img src='https://i.imgur.com/gepq7Ws.png?1'> <br> <button class='next-question'><img src= 'https://i.imgur.com/zfADrn1.png?1'></button>")
        $options.css("visibility", "hidden");
         $textInput.val("")
         $(".team-data").css("visibility", "hidden");
@@ -43,7 +43,7 @@ const $gamePlay = function games(data){
             location.reload()
             })
     } else {
-        $triviaQuestion.html("<img src='https://i.imgur.com/WfKDJO4.png?1'> <br> <button class='try-again'>Let's try again</button>")
+        $triviaQuestion.html("<img src='https://i.imgur.com/WfKDJO4.png?1'> <br> <button class='try-again'> <img src='https://i.imgur.com/VizM3YB.png?1'></button>")
        $options.css("visibility", "hidden");
         $textInput.val("")
         $(".team-data").css("visibility", "hidden");

@@ -35,12 +35,14 @@ body{
 .triviaQuestion{
     height: 40px;
     margin-bottom: 20px;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 .options{
     text-align: center;
     height: 30px;
     margin-bottom: 20px;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 .intro{
@@ -68,15 +70,17 @@ input {
     padding-top: 2px;
     padding-bottom: 4px;
     margin-right: 10px;
+    width: 225px;
 }
 
 input[type="text"]{
-    font-size: 25px;
+    font-size: 20px;
     color: rgb(241, 24, 194);
 }
 
 ::placeholder{
     color: rgb(241, 24, 194);
+    font-family: 'Maven Pro', sans-serif;
 }
 
 .team-data{
@@ -100,7 +104,6 @@ input[type="text"]{
 }
 
 .reset{
-    color: rgb(241, 24, 194);
     margin-top: 15px;
     font-size: 20px;
     height: 37px;
@@ -108,17 +111,15 @@ input[type="text"]{
 }
 
 .next-question{
-    font-size: 20px;
-    color: rgb(241, 24, 194);
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    
 }
 
 .try-again{
-    font-size: 20px;
-    color: rgb(241, 24, 194);
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    font-family: 'Maven Pro', sans-serif;
 }
