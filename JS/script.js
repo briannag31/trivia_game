@@ -56,35 +56,12 @@ const $gamePlay = function games(data){
     })
 }
 
-const gkSelect = $gk.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple")
-    .then($gamePlay)
- })
 
-const musicSelect = $music.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=multiple")
-    .then($gamePlay)
-})
-
-const televisionSelect = $television.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=multiple")
-    .then($gamePlay)
-})
-        
-const historySelect = $history.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple")
-    .then($gamePlay)
-})
-
-const scienceSelect = $science.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=multiple")
-    .then($gamePlay)
-})
-
-const celebritiesSelect = $celebrities.on("click", () => {
-    $.ajax("https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=multiple")
-    .then($gamePlay)
-})
+const categories = $('button.category').on('click',function(){
+  const butn = $(this).attr('value')
+   $.ajax(`https://opentdb.com/api.php?amount=1&category=${butn}&difficulty=easy&type=multiple`)
+        .then($gamePlay)
+});
 
 const resetGame = $reset.on("click", () =>{
     location.reload()
