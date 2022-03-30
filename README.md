@@ -31,8 +31,6 @@
 ![Correct](https://i.imgur.com/Q1V7L1A.png)
 ![Wrong](https://i.imgur.com/vIhJIKP.png)
 
-
-
 ## Future Enhancements
 
 - Improve the game aspect by making it multiplayer with a score.

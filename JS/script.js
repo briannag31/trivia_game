@@ -1,28 +1,19 @@
-const $gk = $(".gk")
-const $music = $(".music")
-const $history = $(".history")
-const $television = $(".television")
-const $science = $(".science")
-const $celebrities = $(".celebrities")
-const $play = $(".play")
-const $playGame = $(".play-game")
 const $submit = $(".submit")
 const $textInput = $("[type='text']")
 const $intro = $(".intro")
 const $reset = $(".reset")
-const $correct = $(".correct")
 const $triviaQuestion = $(".triviaQuestion")
 const $options = $(".options")
 
 
 const $gamePlay = function games(data){
     $(".team-data").css("visibility", "visible");
-    $(".reset").css("visibility", "visible");
+    $reset.css("visibility", "visible");
     $('.category').attr('disabled','disabled');
     const $correctAnswer = data.results[0].correct_answer
-    $(".triviaQuestion").html(`<h2>Question: ${data.results[0].question}</h2>`)
+    $triviaQuestion.html(`<h2>Question: ${data.results[0].question}</h2>`);
     let choices = [];
-    choices.push(data.results[0].incorrect_answers[0],data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2], data.results[0].correct_answer)
+    choices.push(data.results[0].incorrect_answers[0],data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2], data.results[0].correct_answer);
     function randomizeAnswers(array) {
         for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i + 1)); 
@@ -30,7 +21,7 @@ const $gamePlay = function games(data){
         }
       }
     randomizeAnswers(choices);
-    $(".options").html(`<h2>Choose one of the following:</h2><h3>${choices[0]}, ${choices[1]}, ${choices[2]}, ${choices[3]}</h3>`)
+    $options.html(`<h2>Choose one of the following:</h2><h3>${choices[0]}, ${choices[1]}, ${choices[2]}, ${choices[3]}</h3>`)
     $submit.on("click", () =>{    
       let answer = $textInput.val()
       if (answer === $correctAnswer){
