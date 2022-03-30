@@ -61,7 +61,10 @@ const categories = $('button.category').on('click',function(){
   const butn = $(this).attr('value')
    $.ajax(`https://opentdb.com/api.php?amount=1&category=${butn}&difficulty=easy&type=multiple`)
         .then($gamePlay)
-});
+}).catch((error) => {
+    alert("Error - try again!");
+    console.log(error)
+})
 
 const resetGame = $reset.on("click", () =>{
     location.reload()
