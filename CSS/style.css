@@ -15,19 +15,19 @@ h4{
 }
 
 body{
-    background-image: url("https://i.imgur.com/qbRJDCk.png?1");
-    /* background-repeat: no-repeat; */
-    background-size: cover;
+    background-image: url("https://i.imgur.com/LVlAKcc.png");
+    background-repeat: no-repeat;
     background-color: black;
 }
 
 .background{
     background-color: black;
-    width: 1000px;
-    height: 700px;
+    width: 1300px;
+    min-width: 500px;
+    height: 750px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    margin-top: 75px;
 }
 
 .question{
@@ -125,3 +125,4 @@ input[type="text"]{
     margin-top: 15px;
     font-family: 'Maven Pro', sans-serif;
 }
+
