@@ -56,6 +56,9 @@ const $gamePlay = function games(data){
     })
 }
 
+const resetGame = $reset.on("click", () =>{
+    location.reload()
+})
 
 const categories = $('button.category').on('click',function(){
   const butn = $(this).attr('value')
@@ -66,8 +69,5 @@ const categories = $('button.category').on('click',function(){
     console.log(error)
 })
 
-const resetGame = $reset.on("click", () =>{
-    location.reload()
-})
 
 
