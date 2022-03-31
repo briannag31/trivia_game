@@ -1,5 +1,5 @@
 
-# Trivia Night
+# Trivia Party
 
 #### Project 1 by Brianna Gaines
 
@@ -7,7 +7,7 @@
 
 | Field | Detail |
 |-------|--------|
-| Project Name | Trivia Night|
+| Project Name | Trivia Party|
 | Description | This app allows a user to answer trivia questions using the [Open Trivia API](https://opentdb.com/api_config.php). |
 | Live Website | https://briannag31.github.io/trivia_game/ |
 | Repo | https://github.com/briannag31/trivia_game |
